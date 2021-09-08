@@ -14,33 +14,16 @@ HINT: Look at the tests to see how the callback functions are used.
 ------------------------------------------------------------------------------------------------ */
 
 function upper(str) {
-  console.log(str.toUpperCase());
+  return str.toUpperCase();
 }
 
 function lower(str) {
-  console.log(str.toLowerCase());
+  return str.toLowerCase();
 }
 const updateAnimal = (arr, callback) => {
   // Solution code here...
-  let array2=[];
-  for(let i=0; i<arr.length;i++){
-    arr[i]=arr[i].split(',').toString();
-    callback=(arr[i])=>{
-      console.log( callback(value));
-    };
-  }
-
-  arr.map(value=>{
-    value.split(',').toString();
-    callback=value=>{
-      console.log( callback(value));
-    };
-  });
-  return array2 ;
+  return (arr.map(value=>callback(value)));
 };
-const arr = ['BeAr', 'lIon'];
-updateAnimal(arr,lower(arr[0]));
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
