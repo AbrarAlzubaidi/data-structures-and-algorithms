@@ -38,7 +38,7 @@ const sortNames = (arr) => {
   arr.sort();
   return arr;
 };
-//sortNames(['able', 'Bob']);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -59,7 +59,7 @@ const sortNumbers = (arr) => {
     return 0;
   });
 };
-sortNumbers([1,3,8,2,0]);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -79,7 +79,7 @@ const sortBackwards = (arr) => {
     }
     return 0;
   });
-};sortBackwards([1,3,8,2,0]);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -95,7 +95,7 @@ const alphabetize = (arr) => {
   // Solution code here...
   arr.sort();
   return arr;
-};alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
