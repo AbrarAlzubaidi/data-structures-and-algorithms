@@ -13,7 +13,13 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+  let array=[];
+  people.map(value=>{
+    array.push(`${value.firstName} ${value.lastName}`);
+  });
+  return array;
 };
+toLastNames( [ { firstName:'Jane', lastName:'Doe' }, { firstName:'James', lastName:'Bond'}]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,7 +30,12 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
-};
+  let sum = arr.reduce( function(accumulator,value) {
+    accumulator = accumulator + value;
+    return accumulator;
+  }, 0);
+  return sum;
+};addValues([1,5,9,20]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -40,7 +51,12 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+  let total=arr.reduce((accumulator, value)=>{
+    return accumulator+value.purchasePrice;
+  },0);
+  return total;
 };
+addPurchases([{item: 'switch', purchasePrice: 399}, {item: 'toothpaste', purchasePrice: 2}]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -52,7 +68,15 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  let len=arr.reduce((accumulator, value)=>{
+    if(value !==0){
+      //console.log(value);
+      return ++accumulator;
+    }
+  },0);
+  return len;
 };
+countNumberOfElements([1,2,3,4,5,6,8,7]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -112,8 +136,14 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let nameArr=[];
+  arr.reduce((accumulator, value)=>{
+    nameArr.push(value.name);
+  },'');
+  return nameArr;
 };
-
+returnNames(starWarsData);
+//[ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -121,11 +151,22 @@ Write a function named reversedString that takes in a string and returns a strin
 
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
-
 const reversedString = (str) => {
   // Solution code here...
-};
+  // using https://dev.to/sarah_chima/reverse-a-string-four-javascript-solutions-2nbm site
+  const array = str.split('');
+  // console.log(array);
+  const reversedString = array.reduce((accumulator, value) => {
+    // console.log('value:', value);
+    // console.log('accumulator:', accumulator);
 
+    return value + accumulator;
+  }, '');
+
+  return reversedString;
+
+};reversedString('Code 301');
+//'103 edoC'
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
