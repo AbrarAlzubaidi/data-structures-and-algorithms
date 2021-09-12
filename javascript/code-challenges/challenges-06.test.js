@@ -23,8 +23,24 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  // Solution code here...
-};
+  let array = [];
+  array = arr.map(value => {
+    return value.name.split('').reverse().join('');
+  });
+  return array;
+
+}; getNames([
+  {
+    name: 'lloyd',
+    age: 32,
+    shoeSize: 12
+  },
+  {
+    name: 'jamie',
+    age: 21,
+    shoeSize: 8
+  }
+]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -35,7 +51,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
-};
+  let str2 = ' The end.';
+  str2 = str + str2;
+  return str2;
+}; appendTheEnd('This is my story.');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -52,7 +71,10 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
-};
+  let num = arr[0];
+  arr.push(num);
+  console.log(arr);
+}; appendFirstToLast([1, 2, 3]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -71,7 +93,10 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
-};
+  let obj2=obj;
+  obj2.yearBorn = year;
+  console.log(obj2);
+}; 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -123,7 +148,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 describe('Testing challenge 1', () => {
   test('It returns an array of names reversed', () => {
-    expect(getNames([{name:'lloyd', age: 32, shoeSize: 12}, {name:'jamie', age:21, shoeSize: 8}])).toStrictEqual(['dyoll', 'eimaj']);
+    expect(getNames([{ name: 'lloyd', age: 32, shoeSize: 12 }, { name: 'jamie', age: 21, shoeSize: 8 }])).toStrictEqual(['dyoll', 'eimaj']);
     expect(getNames([])).toStrictEqual([]);
   });
 });
