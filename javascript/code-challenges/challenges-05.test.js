@@ -218,7 +218,15 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let total=0;
+  total=arr.reduce((accumulator, value)=>{
+    console.log(accumulator.children.length);
+    console.log(value.children.length);
+    return accumulator.children.length+ value.children.length;
+  });
+  return total;
 };
+countNumberOfChildren(characters);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -230,7 +238,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
-};
+  let sum=0;
+  let avg=0;
+  sum=arr.reduce((accumulator, value)=>{
+    return accumulator+value;
+  });
+  avg=sum/arr.length;
+  return avg;
+};calculateAverage([1,2,3,40]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
